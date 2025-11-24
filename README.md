@@ -61,3 +61,10 @@ source .venv/bin/activate
 ``` bash
 pip install fastapi uvicorn[standard] openai chromadb python-dotenv pandas sentence-transformers
 ```
+
+#### Create .env file if using OpenAI
+
+```ini
+OPENAI_API_KEY=your_openai_key_here
+```
+
