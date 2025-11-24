@@ -10,7 +10,7 @@ It allows you to ask natural-language questions over real US legislative bills u
 
 ---
 
-## 🚀 Features
+## Features
 
 - Ingests a public dataset of US Congressional bills  
 - Chunks + embeds the text into a vector database  
@@ -21,7 +21,7 @@ It allows you to ask natural-language questions over real US legislative bills u
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 RAGAIUSLawBills/
 │
@@ -35,13 +35,13 @@ RAGAIUSLawBills/
 
 ---
 
-##Prerequisites
+## Prerequisites
 
 - Python **3.10+**
 - pip
 - Virtual environment recommended
 
-### 1. Create Virtual Environment
+### Create Virtual Environment
 
 Windows:
 
