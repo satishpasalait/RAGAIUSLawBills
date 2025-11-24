@@ -68,3 +68,27 @@ pip install fastapi uvicorn[standard] openai chromadb python-dotenv pandas sente
 OPENAI_API_KEY=your_openai_key_here
 ```
 
+## Download Dataset
+We use the BillSum public dataset of US Congressional bills:
+
+```bash
+curl https://raw.githubusercontent.com/Azure-Samples/Azure-OpenAI-Docs-Samples/main/Samples/Tutorials/Embeddings/data/bill_sum_data.csv --output bill_sum_data.csv
+```
+
+## Ingest Data (Build Vector Index)
+This will:
+- Read the bills dataset
+- Chunk each bill into manageable pieces
+- Generate embeddings using sentence-transformers
+- Store everything in ./chroma_store
+
+```bash
+python ingest.py
+```
+
+You should see output like:
+```text
+Ingested 500+ chunks into Chroma.
+```
+
+
