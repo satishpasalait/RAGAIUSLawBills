@@ -122,6 +122,25 @@ Windows example:
 }
 ```
 
+## Test Using Swagger UI
+FastAPI automatically generates an interactive Swagger UI.
+
+Open this in your browser:
+```text
+http://127.0.0.1:8000/docs
+```
+
+From there you can:
+- Click on the POST /ask endpoint
+- Click Try it out
+- Enter your request body, for example:
+```json
+{
+  "question": "Can I get information on cable company tax revenue?",
+  "top_k": 5
+}
+```
+
 ## How RAG Works Here
 - Documents are chunked and embedded
 - Embeddings are stored in ChromaDB
