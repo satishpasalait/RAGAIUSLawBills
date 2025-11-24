@@ -45,19 +45,19 @@ RAGAIUSLawBills/
 
 Windows:
 
-```bash
+``` bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
 Mac / Linux:
 
-```bash
+``` bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 ### Install Dependencies
 
-```bash
+``` bash
 pip install fastapi uvicorn[standard] openai chromadb python-dotenv pandas sentence-transformers
 ```
