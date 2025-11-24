@@ -31,3 +31,25 @@ RAGAIUSLawBills/
 ├── chroma_store/ # ChromaDB vector database folder
 ├── .env # API keys (optional if using OpenAI)
 └── README.md
+
+
+---
+
+##Prerequisites
+
+- Python **3.10+**
+- pip
+- Virtual environment recommended
+
+### 1. Create Virtual Environment
+
+Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+
+Mac / Linux:
+```bash
+python -m venv .venv
+source .venv/bin/activate
