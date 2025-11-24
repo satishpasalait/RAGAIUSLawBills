@@ -134,10 +134,10 @@ Windows example:
 
 | Package               | What it is                                   | Why you’re using it                                                   |
 | --------------------- | -------------------------------------------- | --------------------------------------------------------------------- |
-| **fastapi**           | A modern Python framework for building APIs  | Used to expose your RAG system as a REST API like `/ask`              |
-| **uvicorn[standard]** | A lightning-fast ASGI web server             | Runs your FastAPI app locally or in production                        |
+| **fastapi**           | A modern Python framework for building APIs  | Used to expose RAG system as a REST API like `/ask`              |
+| **uvicorn[standard]** | A lightning-fast ASGI web server             | Runs FastAPI app locally or in production                        |
 | **openai**            | Official OpenAI Python SDK                   | Used to call embedding models and LLM chat models                     |
 | **chromadb**          | A lightweight local vector database          | Stores document embeddings + does similarity search for RAG           |
 | **pydantic[dotenv]**  | Data validation + settings via `.env`        | Validates API request/response models and loads environment variables |
-| **python-dotenv**     | Loads environment variables from `.env` file | Lets you store your API keys safely instead of hardcoding them        |
+| **python-dotenv**     | Loads environment variables from `.env` file | Stores API keys safely instead of hardcoding them        |
 | **pandas**            | Data analytics library                       | Used to load & process the online CSV dataset (BillSum data)          |
