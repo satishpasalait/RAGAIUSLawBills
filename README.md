@@ -91,4 +91,53 @@ You should see output like:
 Ingested 500+ chunks into Chroma.
 ```
 
+## Run the API
+Start FastAPI:
+```bash
+uvicorn app:app --reload
+```
+Then open:
+http://127.0.0.1:8000/docs
 
+## Test the API
+Windows example:
+```bash
+curl -X POST "http://127.0.0.1:8000/ask" ^
+ -H "Content-Type: application/json" ^
+ -d "{\"question\":\"Can I get information on cable company tax revenue?\"}"
+```
+
+Windows example:
+```json
+{
+  "answer": "The bill discusses tax treatment for cable companies...",
+  "sources": [
+    {
+      "bill_id": "bill_9",
+      "title": "Cable Television Tax Fairness Act",
+      "chunk_index": 2,
+      "score": 0.231
+    }
+  ]
+}
+```
+
+## How RAG Works Here
+- Documents are chunked and embedded
+- Embeddings are stored in ChromaDB
+- Your question gets embedded
+- Top relevant chunks are retrieved
+- LLM generates answer using only retrieved context
+- API returns answer + source references
+
+## Package Breakdown
+
+| Package               | What it is                                   | Why you’re using it                                                   |
+| --------------------- | -------------------------------------------- | --------------------------------------------------------------------- |
+| **fastapi**           | A modern Python framework for building APIs  | Used to expose your RAG system as a REST API like `/ask`              |
+| **uvicorn[standard]** | A lightning-fast ASGI web server             | Runs your FastAPI app locally or in production                        |
+| **openai**            | Official OpenAI Python SDK                   | Used to call embedding models and LLM chat models                     |
+| **chromadb**          | A lightweight local vector database          | Stores document embeddings + does similarity search for RAG           |
+| **pydantic[dotenv]**  | Data validation + settings via `.env`        | Validates API request/response models and loads environment variables |
+| **python-dotenv**     | Loads environment variables from `.env` file | Lets you store your API keys safely instead of hardcoding them        |
+| **pandas**            | Data analytics library                       | Used to load & process the online CSV dataset (BillSum data)          |
